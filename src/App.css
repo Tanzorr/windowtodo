@@ -1,38 +1,48 @@
-.App {
-  text-align: center;
+.sidebar{
+  border: solid 1px #000;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.work-area{
+  border: solid 1px #000;
+  height: 100%;
+  background-image:url('./img/kartiny-4.jpg');
+  color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.categies ul{
+  margin: 0 15px 0 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*--Worck place style --*/
+.content ul li{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #fff;
+  margin-bottom: 5px;
+  padding: 0 15px;
+  border-radius: 4px;
+  color: #333;
 }
 
-.App-link {
-  color: #61dafb;
+.content ul li div{
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fa-star{
+  color: #333;
+}
+
+
+.circle{
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  border: solid 1px #ccc;
+  border-radius:50% ;
+
+}
+
+.content{
+  margin: 60px 50px;
 }
