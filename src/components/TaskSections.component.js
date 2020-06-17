@@ -11,7 +11,7 @@ const TasksSections =({addTask, remTask, catTitle, state})=>{
     let tasksList2 = state[catTitle].map((t,index)=><Task key={index} rmT={remTask} task ={t}/>)
 
     return(
-        <div className="work-area col-lg-8">
+        <div className="work-area col-md-8">
             <div className="content">
                 <h1>{catTitle}</h1>
                 <ul id="sortable">

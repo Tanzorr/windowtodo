@@ -15,7 +15,7 @@ let INITIAL_STATE ={
         Private:[],
         Date:[],
         Work:[],
-        TasksC:[],
+
         current:"myDay"
 
 }
@@ -32,26 +32,46 @@ const reducer = (state,action)=>{
             return {...state, myDay:state.myDay.filter(t=>t!==action.payload)};
         case 'AddImportant':
             return {...state, Important:[...state.Important, action.payload]};
+        case 'RemImportant':
+            return {...state, Important:state.Important.filter(t=>t!==action.payload)};
         case 'AddPlanned':
             return {...state, Planned:[...state.Planned, action.payload]};
+        case 'RemPlanned':
+            return {...state, Planned:state.Planned.filter(t=>t!==action.payload)};
         case 'AddAssignedToYou':
             return {...state, AssignedToYou:[...state.AssignedToYou, action.payload]};
+        case 'RemAssignedToYou':
+            return {...state, AssignedToYou:state.AssignedToYou.filter(t=>t!==action.payload)};
         case 'AddTasks':
             return {...state, Tasks:[...state.Tasks, action.payload]};
+        case 'RemTasks':
+            return {...state, Tasks:state.Tasks.filter(t=>t!==action.payload)};
         case 'AddToDo':
             return {...state, ToDo:[...state.ToDo, action.payload]};
+        case 'RemToDo':
+            return {...state, ToDo:state.ToDo.filter(t=>t!==action.payload)};
         case 'AddMoviesToWatch':
             return {...state, MoviesToWatch:[...state.MoviesToWatch, action.payload]};
+        case 'RemMoviesToWatch':
+            return {...state, MoviesToWatch:state.MoviesToWatch.filter(t=>t!==action.payload)};
         case 'AddTravel':
             return {...state, Travel:[...state.Travel, action.payload]};
+        case 'RemTravel':
+            return {...state, Travel:state.Travel.filter(t=>t!==action.payload)};
         case 'AddPrivate':
             return {...state, Private:[...state.Private, action.payload]};
+        case 'RemPrivate':
+            return {...state, Private:state.Private.filter(t=>t!==action.payload)};
         case 'AddDate':
             return {...state, Date:[...state.Date, action.payload]};
+        case 'RemDate':
+            return {...state, Date:state.Date.filter(t=>t!==action.payload)};
         case 'AddWork':
             return {...state, Work:[...state.Work, action.payload]};
+        case 'RemWork':
+            return {...state, Work:state.Work.filter(t=>t!==action.payload)};
 
-            default:
+        default:
             return state;
     }
 };

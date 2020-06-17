@@ -1,5 +1,6 @@
 import React from "react";
 import CategoryItem from "./TaskCatgyry.component";
+import User from "../img/user.png"
 
 
 
@@ -9,15 +10,13 @@ const Aside=({state,changeCat})=>{
 
     return(
 
-            <aside className="sidebar col-lg-4 ">
-                <div>
-                    <img src="./img/user.png" alt=""/><span>User Name</span>
-                </div>
-                <div className="categies">
+            <aside className="sidebar col-md-4 ">
+                <h2 className='text-center'>
+                    <img src={User} alt="user"/><span>User Name</span>
+                </h2>
+                <div className="categories">
                     <ul>
-
                         {categoriesList}
-
                     </ul>
 
                 </div>
