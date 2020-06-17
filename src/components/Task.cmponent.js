@@ -1,9 +1,9 @@
 import React from "react";
 
 
-const Task = ({task})=>{
+const Task = ({task, rmT})=>{
     return(
-        <li className='row justify-content-between'>
+        <li className='row justify-content-between' onClick={()=>{rmT(task)}}>
             <div className="row justify-content-between">
                 <div className="circle"></div>
                 <span>
