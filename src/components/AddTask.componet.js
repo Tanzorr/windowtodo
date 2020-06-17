@@ -9,7 +9,7 @@ const AddTask =({addT})=>{
     }
 
     return(
-        <div>
+        <div className="add_task">
             <p>
                 <label htmlFor="">Add new Task</label>
             </p>

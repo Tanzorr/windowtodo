@@ -25,15 +25,32 @@ const reducer = (state,action)=>{
     switch (action.type) {
 
         case 'SET_CATEGORY':
-            let keyy = String(action.payload)
-            console.log('Key',String(keyy))
-            return {...state, current:action.payload, TasksC:state["myDay"]};
-        case 'myDay':
+            return {...state, current:action.payload};
+        case 'AddmyDay':
             return {...state, myDay:[...state.myDay, action.payload]};
-        case 'Important':
+        case 'RemmyDay':
+            return {...state, myDay:state.myDay.filter(t=>t!==action.payload)};
+        case 'AddImportant':
             return {...state, Important:[...state.Important, action.payload]};
-        case 'Planned':
+        case 'AddPlanned':
             return {...state, Planned:[...state.Planned, action.payload]};
+        case 'AddAssignedToYou':
+            return {...state, AssignedToYou:[...state.AssignedToYou, action.payload]};
+        case 'AddTasks':
+            return {...state, Tasks:[...state.Tasks, action.payload]};
+        case 'AddToDo':
+            return {...state, ToDo:[...state.ToDo, action.payload]};
+        case 'AddMoviesToWatch':
+            return {...state, MoviesToWatch:[...state.MoviesToWatch, action.payload]};
+        case 'AddTravel':
+            return {...state, Travel:[...state.Travel, action.payload]};
+        case 'AddPrivate':
+            return {...state, Private:[...state.Private, action.payload]};
+        case 'AddDate':
+            return {...state, Date:[...state.Date, action.payload]};
+        case 'AddWork':
+            return {...state, Work:[...state.Work, action.payload]};
+
             default:
             return state;
     }
@@ -43,7 +60,13 @@ const reducer = (state,action)=>{
 
 function App() {
     const setTask = (task)=>({
-        type:state.current,
+        type:"Add"+state.current,
+        payload:task,
+
+    })
+
+    const remTask = (task)=>({
+        type:"Rem"+state.current,
         payload:task,
 
     })
@@ -58,17 +81,15 @@ function App() {
         dispatch(setTask(task))
     }
 
+    const removeTask =(task)=>{
+        dispatch(remTask(task))
+    }
+
     const changeCat =(cat )=>{
         dispatch( setCurrentCat(cat))
     }
 
-    useEffect(()=>{
-        addTask("task")
-    },[])
 
-    useEffect(()=>{
-       changeCat(" Important")
-    },[])
 
     let cur =state.current
     var ts =["fsnnf","sfajf"]
@@ -83,8 +104,7 @@ function App() {
       <div className="container h-100">
         <div className="row h-100">
             <Aside state ={state} changeCat ={changeCat} />
-            <TasksSections addTask ={addTask} cTasks={ts}/>
-
+            <TasksSections addTask ={addTask} remTask={removeTask} state={state} catTitle={cur}/>
         </div>
       </div>
 

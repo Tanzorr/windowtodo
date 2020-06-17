@@ -46,3 +46,7 @@
 .content{
   margin: 60px 50px;
 }
+
+.content h1,.add_task{
+  margin-left: 22px;
+}
